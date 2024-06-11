@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<!-- Basic -->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Site Metas -->
+    <title>ABOUT</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="{% static 'images/logo.ico' %}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{% static 'images/logo.png' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Start Main Top -->
+    <header class="main-header" >
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav" >
+            <div class="container">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header" >
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                    <a class="navbar-brand" href="{% url 'index' %}" style="margin-left:-110px;"><img src="{% static 'images/logo.png' %}" class="logo" alt=""></a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li class="nav-item active"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About Us</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
+                            <ul class="dropdown-menu">
+								<li><a href="{% url 'cake' %}">Cakes</a></li>
+								<li><a href="{% url 'chocolate' %}">Chocolates</a></li>
+                                <li><a href="{% url 'cart' %}">My Cart</a></li>
+                                <li><a href="{% url 'show_bill' %}">My Orders</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'gallery' %}">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact Us</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">REGISTER</a>
+                            <ul class="dropdown-menu">
+								<li><a href="{% url 'signup' %}">Sign Up</a></li>
+                                <li><a href="{% url 'signin' %}">Sign In</a></li>
+                                <li><a href="{% url 'lout' %}">Log Out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+
+                <!-- Start Atribute Navigation -->
+                <div class="attr-nav">
+                    <ul>
+                        <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+                    </ul>
+                </div>
+                <!-- End Atribute Navigation -->
+            </div>
+
+        </nav>
+        <!-- End Navigation -->
+    </header>
+    <!-- End Main Top -->
+
+    <!-- Start Top Search -->
+    <div class="top-search">
+    <div class="container">
+        <div class="input-group">
+            <form method="get" action="{% url 'search' %}">
+                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                <input type="text" name="query" class="form-control" placeholder="Search">
+                <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+            </form>
+        </div>
+    </div>
+    </div>
+    <!-- End Top Search -->
+
+    {% if user.is_authenticated %}
+        <p>Hi,<strong> {{ user.username }} ! </strong></p>
+     {% else %}
+        <p>You are not signed in.</p>
+    {% endif %}
+
+    <!-- Start All Title Box -->
+    <div class="all-title-box" style="background:url('https://chocolates-elrey.com/wp-content/uploads/2024/02/premiumchocolates.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>ABOUT US</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End All Title Box -->
+
+    <!-- Start About Page  -->
+    <div class="about-box-main">
+        <div class="container">
+            <div class="row">
+				<div class="col-lg-6">
+                    <div class="banner-frame"> <img style="height:510px; margin-top:130px;" class="img-fluid" src="{% static 'images/about-img.png' %}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="title-all text-center" style="margin-left:-570px;">
+                        <h1>ABOUT US</h1>
+                        <p>Life without chocolate is just an existence.</p>
+                    </div>
+                    <h2 class="noo-sh-title-top">STORY OF <span>OUR SHOP</span></h2>
+                    <p>The history of chocolates & cakes goes back to the 17th century, when cocoa powder from the Americas was added to traditional cake recipes. However, it was not until the 19th century that chocolate cake became widely available and affordable.
+                    The chocolates & cakes in the US were made by adding chocolate to the cake batter, rather than using it only for fillings and glazes. These cakes were moist, rich, and fudgy, and soon became a favorite for special occasions.
+                    No matter what kind of chocolate cake you prefer, you can always enjoy a slice of moist, decadent, and satisfying dessert that has a long and fascinating history. Chocolate cake is truly a classic treat that never disappoints.
+                    If you're looking for a healthier alternative, you can try making chocolate cake with whole wheat flour, low-fat milk, unsweetened cocoa powder, and natural sweeteners.
+                    Chocolate cake is a cake flavored with melted chocolate, cocoa powder, or both. It is one of the most popular and delicious desserts in the world.</p>
+                    <p>Today, there are countless variations of chocolate cake recipes, from German chocolate cake to vegan chocolate cupcakes. Some of them use different types of chocolate, such as dark, milk, or white, while others add nuts, fruits, or spices for extra flavor.</p>
+					<a class="btn hvr-hover" href="{% url 'about' %}">Read More</a>
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="col-sm-6 col-lg-4">
+                    <div class="service-block-inner">
+                        <h3>We are Trusted</h3>
+                        <p>The first chocolate cakes in the US were made by adding chocolate to the cake batter, rather than using it only for fillings and glazes. These cakes were moist, rich, and fudgy, and soon became a favorite for special occasions.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="service-block-inner">
+                        <h3>We are Professional</h3>
+                        <p>You can also find chocolate cake recipes that are easy to make, such as microwave mug cake, or that are gluten-free, dairy-free, or sugar-free, to suit different dietary needs and preferences.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="service-block-inner">
+                        <h3>We are Expert</h3>
+                        <p>No matter what kind of chocolate cake you prefer, you can always enjoy a slice of moist, decadent, and satisfying dessert that has a long and fascinating history. Chocolate cake is truly a classic treat that never disappoints.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row my-4">
+                <div class="col-12">
+                    <h2 class="noo-sh-title">Meet Our Team</h2>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="hover-team">
+                        <div class="our-team"> <img src="{% static 'images/img-4.png' %}" alt="" />
+                            <div class="team-content">
+                                <h3 class="title">Robert Downey</h3> <span class="post">Cake Specialist</span> </div>
+                            <ul class="social">
+                                <li>
+                                    <a href="https://www.facebook.com/" class="fab fa-facebook"></a>
+                                </li>
+                                <li>
+                                    <a href="https://x.com/" class="fab fa-twitter"></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.google.com/" class="fab fa-google-plus"></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/" class="fab fa-youtube"></a>
+                                </li>
+                            </ul>
+                            <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
+                        </div>
+                        <div class="team-description">
+                            <p>A passionate and creative cake specialist, is renowned for their artistic and innovative approach to cake design. With a meticulous eye for detail and a deep understanding of baking science, they masterfully combine flavors to create unique and delicious cakes. </p>
+                        </div>
+                        <hr class="my-0"> </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="hover-team">
+                        <div class="our-team"> <img src="{% static 'images/img-3.png' %}" alt="" />
+                            <div class="team-content">
+                                <h3 class="title">Stephen Vincent</h3> <span class="post">Chocolate Specialist</span> </div>
+                            <ul class="social">
+                                <li>
+                                    <a href="https://www.facebook.com/" class="fab fa-facebook"></a>
+                                </li>
+                                <li>
+                                    <a href="https://x.com/" class="fab fa-twitter"></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.google.com/" class="fab fa-google-plus"></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/" class="fab fa-youtube"></a>
+                                </li>
+                            </ul>
+                            <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
+                        </div>
+                        <div class="team-description">
+                            <p>A dedicated and skilled chocolate specialist, [Name] brings a profound passion and expertise to the art of chocolate making. With a keen eye for detail and a creative flair, they craft exquisite chocolate confections that delight the senses. </p>
+                        </div>
+                        <hr class="my-0"> </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="hover-team">
+                        <div class="our-team"> <img src="{% static 'images/img-1.png' %}" alt="" />
+                            <div class="team-content">
+                                <h3 class="title">Natasha Romanoff</h3> <span class="post">Chocolate Specialist</span> </div>
+                            <ul class="social">
+                                <li>
+                                    <a href="#" class="fab fa-facebook"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="fab fa-twitter"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="fab fa-google-plus"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="fab fa-youtube"></a>
+                                </li>
+                            </ul>
+                            <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
+                        </div>
+                        <div class="team-description">
+                            <p>A dedicated and skilled chocolate specialist, [Name] brings a profound passion and expertise to the art of chocolate making. With a keen eye for detail and a creative flair, they craft exquisite chocolate confections that delight the senses. </p>
+                        </div>
+                        <hr class="my-0"> </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="hover-team">
+                        <div class="our-team"> <img src="{% static 'images/img-2.png' %}" alt="" />
+                            <div class="team-content">
+                                <h3 class="title">Peter Parker</h3> <span class="post">Cake Specialist</span> </div>
+                            <ul class="social">
+                                <li>
+                                    <a href="https://www.facebook.com/" class="fab fa-facebook"></a>
+                                </li>
+                                <li>
+                                    <a href="https://x.com/" class="fab fa-twitter"></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.google.com/" class="fab fa-google-plus"></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/" class="fab fa-youtube"></a>
+                                </li>
+                            </ul>
+                            <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
+                        </div>
+                        <div class="team-description">
+                            <p>A passionate and creative cake specialist, is renowned for their artistic and innovative approach to cake design. With a meticulous eye for detail and a deep understanding of baking science, they masterfully combine flavors to create unique and delicious cakes. </p>
+                        </div>
+                        <hr class="my-0"> </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+     <!-- End About Page -->
+
+    <!-- Start Instagram Feed  -->
+    <div class="instagram-box">
+        <div class="main-instagram owl-carousel owl-theme">
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'images/instagram-img-01.png' %}" alt="" />
+                    <div class="hov-in">
+                        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'images/instagram-img-02.png' %}" alt="" />
+                    <div class="hov-in">
+                        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'images/instagram-img-03.png' %}" alt="" />
+                    <div class="hov-in">
+                        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'images/instagram-img-04.png' %}" alt="" />
+                    <div class="hov-in">
+                        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'images/instagram-img-05.png' %}" alt="" />
+                    <div class="hov-in">
+                        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'images/instagram-img-06.png' %}" alt="" />
+                    <div class="hov-in">
+                        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'images/instagram-img-07.png' %}" alt="" />
+                    <div class="hov-in">
+                        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'images/instagram-img-08.png' %}" alt="" />
+                    <div class="hov-in">
+                        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'images/instagram-img-09.png' %}" alt="" />
+                    <div class="hov-in">
+                        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'images/instagram-img-10.png' %}" alt="" />
+                    <div class="hov-in">
+                        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'images/instagram-img-05.jpg' %}" alt="" />
+                    <div class="hov-in">
+                        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Instagram Feed  -->
+
+
+    <!-- Start Footer  -->
+    <footer>
+        <div class="footer-main">
+            <div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-12 col-sm-12">
+						<div class="footer-top-box">
+							<h3>Business Time</h3>
+							<ul class="list-time">
+								<li>Monday - Friday: 08.00am to 05.00pm</li> <li>Saturday: 10.00am to 08.00pm</li> <li>Sunday: <span>Closed</span></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-12 col-sm-12">
+						<div class="footer-top-box">
+							<h3>Stay Updated</h3>
+							<form action="{% url 'contact' %}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+								<div class="form-group">
+									<input class="" type="email" name="Email" placeholder="Email Address" />
+									<i class="fa fa-envelope"></i>
+								</div>
+								<button class="btn hvr-hover" type="submit">Submit</button>
+							</form>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-12 col-sm-12">
+						<div class="footer-top-box">
+							<h3>Social Media</h3>
+							<p>Want something sweet, follow us.</p>
+							<ul>
+                                <li><a href="https://www.facebook.com/"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="https://x.com/"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="https://www.linkedin.com/"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                                <li><a href="https://www.google.com/"><i class="fab fa-google-plus" aria-hidden="true"></i></a></li>
+                                <li><a href="https://rss.com/"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+                                <li><a href="https://www.pinterest.com/"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
+                                <li><a href="https://www.whatsapp.com/"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+                            </ul>
+						</div>
+					</div>
+				</div>
+				<hr>
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-widget">
+                            <h4>About Us</h4>
+                            <p>The history of chocolates & cakes goes back to the 17th century, when cocoa powder from the Americas was added to traditional cake recipes. However, it was not until the 19th century that chocolate cake became widely available and affordable.
+                                The chocolates & cakes in the US were made by adding chocolate to the cake batter, rather than using it only for fillings and glazes. These cakes were moist, rich, and fudgy, and soon became a favorite for special occasions.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-link">
+                            <h4>Information</h4>
+                            <ul>
+                                <li><a href="{% url 'about' %}">About Us</a></li>
+                                <li><a href="{% url 'contact' %}">Customer Service</a></li>
+                                <li><a href="{% url 'contact' %}">Our Sitemap</a></li>
+                                <li><a href="{% url 'contact' %}">Terms &amp; Conditions</a></li>
+                                <li><a href="{% url 'contact' %}">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-link-contact">
+                            <h4>Contact Us</h4>
+                            <ul>
+                                <li>
+                                    <p><i class="fas fa-map-marker-alt"></i>Address: Willy Wonka <br>Wonka's Chocolate Factory, Desire Island<br> WW 27031999 </p>
+                                </li>
+                                <li>
+                                    <p><i class="fas fa-phone-square"></i>Phone: <a href="{% url 'contact' %}">+1-234 567 890</a></p>
+                                </li>
+                                <li>
+                                    <p><i class="fas fa-envelope"></i>Email: <a href="{% url 'contact' %}">wonka@chocolate.com</a></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer  -->
+
+    <!-- Start copyright  -->
+    <div class="footer-copyright">
+        <p class="footer-company">All Rights Reserved. &copy; 2024 <a href="{% url 'about' %}">WILLY WONKA</a> Design By : AB
+    </div>
+    <!-- End copyright  -->
+
+    <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+
+    <!-- ALL JS FILES -->
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- ALL PLUGINS -->
+    <script src="{% static 'js/jquery.superslides.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap-select.js' %}"></script>
+    <script src="{% static 'js/inewsticker.js' %}"></script>
+    <script src="{% static 'js/bootsnav.js' %}"></script>
+    <script src="{% static 'js/images-loded.min.js' %}"></script>
+    <script src="{% static 'js/isotope.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/baguetteBox.min.js' %}"></script>
+    <script src="{% static 'js/form-validator.min.js' %}"></script>
+    <script src="{% static 'js/contact-form-script.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+</body>
+
+</html>
